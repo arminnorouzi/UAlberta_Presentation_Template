@@ -1,0 +1,216 @@
+%\documentclass[xcolor=pst,presentation]{beamer}
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Boadilla}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage{url}
+\usepackage{extdash}
+\usepackage{color,colortbl}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{subcaption}
+\usepackage{pgfplots} 
+\usepackage{tikz}                               
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+\usepackage{standalone}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\usepackage{qtree}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figH
+\newlength\figW
+\usepgfplotslibrary{external} 
+\usepackage{lmodern}
+%\tikzexternalize[optimize=false,prefix=PREFIX]
+%\tikzexternalize
+%\tikzexternalize[prefix=tikz/]
+\usepackage{anyfontsize}
+
+
+\definecolor{darkgreen}{rgb}{0.1,0.5,0.1}
+\definecolor{darkblue}{rgb}{0,0,128}
+
+\definecolor{uofagreen}{RGB}{0, 127, 68} 
+\definecolor{uofagreen1}{RGB}{72,152, 95}
+\definecolor{uofagreen2}{RGB}{14,137,79} 
+\definecolor{uofagreen3}{RGB}{230,242,230} 
+\definecolor{uofayellow}{RGB}{255,220,14} 
+\definecolor{uofayellow2}{RGB}{255,244,193} 
+\definecolor{grayt}{RGB}{180,180,180} 
+\definecolor{grayb}{RGB}{228,228,228} 
+\definecolor{black}{RGB}{0,0,0}
+
+\setbeamercolor{palette primary}{bg=uofagreen2,fg=white}
+\setbeamercolor{palette secondary}{bg=uofayellow,fg=black} %2
+\setbeamercolor{palette tertiary}{bg=uofagreen1,fg=white} %1
+\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
+\setbeamercolor{structure}{fg=uofagreen} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=uofayellow} % TOC sections
+\setbeamercolor{subsection in head/foot}{bg=uofayellow,fg=white}
+
+\setbeamercolor{block title}{use=structure,bg=uofagreen1,fg=white}
+\setbeamercolor{block body}{use=structure,bg=uofagreen3,fg=black}
+
+
+%\setbeamercolor{block body}{use=structure,bg=uofayellow2,fg=black}
+%\setbeamercolor{block title}{use=structure,bg=uofayellow,fg=black}
+
+
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\graphicspath{{Figures/}}
+\def\input@path{{Figures/}}
+\setbeamercovered{dynamic}
+
+\newenvironment<>{varblock}[2][\textwidth]{
+     \begin{center}
+       \begin{minipage}{#1}
+         \setlength{\textwidth}{#1}
+           \begin{actionenv}#3
+             \def\insertblocktitle{#2}
+             \par
+             \usebeamertemplate{block begin}
+   {\par
+       \usebeamertemplate{block end}
+     \end{actionenv}}
+   \end{minipage}
+\end{center}}
+
+\newcommand{\nox}{$\mathrm{NO_{x}}$}
+\newcommand{\notw}{$\mathrm{NO_{2}}$}
+\newcommand{\bmep}{$\mathrm{BMEP}$}
+\newcommand{\cotw}{$\mathrm{CO_{2}}$}
+\newcommand{\co}{$\mathrm{CO}$}
+\newcommand{\uhc}{$\mathrm{UHC}$}
+\newcommand{\nht}{$\mathrm{NH_{3}}$}
+
+\usepackage[absolute,overlay]{textpos}
+  \setlength{\TPHorizModule}{1mm}
+  \setlength{\TPVertModule}{1mm}
+  
+  \newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\title [Your presentation title]{Your presentation title}
+\pagenumbering{roman}
+
+\author[Your name]{Your name} % Your name
+
+
+
+\institute[University Of Alberta]{Department of of Mechanical Engineering, University of Alberta}
+
+
+\date[\today]{\today}
+
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\vspace{1cm}
+
+
+
+
+\begin{textblock}{50}(3,70)  
+\begin{figure}[htbp]
+\centering
+	\includegraphics[width=5cm]{Figures/Logo_Engg2.png}
+\end{figure}
+\end{textblock} 
+
+
+
+\begin{textblock}{50}(110,64)  
+\begin{figure}[htbp]
+\centering
+	\includegraphics[width=4.5cm]{Figures/UA-EAC-COLOUR-png.png}
+\end{figure}
+\end{textblock} 
+
+
+\end{frame}
+%----------------------------------------------------------------------------------------
+%   PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\section{Your Introduction}
+
+%---------------------------------------------------------------SLIDE
+\begin{frame}
+\frametitle{Your Overview}
+
+
+\begin{block}{Your block}
+\begin{itemize}
+    \item \textbf{Your list}
+    \begin{itemize}
+        \item item 1
+        \item item 2
+        \item item 3
+     \end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+%---------------------------------------------------------------SLIDE
+\begin{frame}{}
+\begin{block}{}
+\vspace{0.2cm} \centering{\huge{Questions?}}\vspace{0.2cm}
+\end{block}
+
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\vspace{1.5cm} \centering{\normalsize{}}\\
+\vspace{0.05cm}  University of Alberta\\\vspace{0.05cm}
+(Email: Youremail$@$ualberta.ca)\\
+
+\end{column}
+\begin{column}{0.30\textwidth}
+\vspace{1.5cm} \centering{\normalsize{}}\\
+\begin{figure}[h!]
+\begin{flushleft}
+\includegraphics[width=0.95\textwidth]{Figures/Logo_Engg2.png}\\
+\end{flushleft}
+\end{figure}
+
+\end{column}
+\begin{column}{0.30\textwidth}
+\vspace{1.5cm}
+\begin{figure}[h!]
+\begin{flushleft}
+\includegraphics[width=0.6\textwidth]{Figures/UA-EAC-COLOUR-png.png}\\
+\end{flushleft}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+%---------------------------------------------------------------SLIDE
+
+
+%----------------------------------------------------------------------------------------
+%---------------Backup Slides--------------------------------
+\appendix
+\backupbegin
+
+
+%---------------------------------------------------------------SLIDE
+\backupend
+\end{document}
+              
+            
